@@ -5,6 +5,7 @@ class: text-center
 transition: fade-out
 mdc: true
 duration: 30min
+base: /temporal-golang-meetup/
 ---
 
 # Taming Complex Workflows
@@ -33,7 +34,7 @@ Ask how many know about temporal
 ```go
 
 // AddNode adds a node to kubernetes cluster.
-function AddNode(ctx context.Context, input AddNodeInput) {
+func AddNode(ctx context.Context, input AddNodeInput) {
   CreateVM(ctx)
   // ... 
   WaitForVMReady(ctx)
@@ -211,7 +212,7 @@ v-motion
 
 ```go 
 // AddNode adds a node to kubernetes cluster.
-function AddNode(ctx context.Context, input AddNodeInput) {
+func AddNode(ctx context.Context, input AddNodeInput) {
   resp, err := CreateVM(ctx, input)
   // ... 
   WaitForVMReady(ctx, resp)
@@ -224,7 +225,7 @@ function AddNode(ctx context.Context, input AddNodeInput) {
 
 ```go {2}
 // AddNode adds a node to kubernetes cluster.
-function AddNode(ctx worfklow.Context, input AddNodeInput) {
+func AddNode(ctx worfklow.Context, input AddNodeInput) {
   resp, err := CreateVM(ctx, input)
   // ... 
   WaitForVMReady(ctx, resp)
@@ -237,7 +238,7 @@ function AddNode(ctx worfklow.Context, input AddNodeInput) {
 
 ```go {3}
 // AddNode adds a node to kubernetes cluster.
-function AddNode(ctx worfklow.Context, input AddNodeInput) {
+func AddNode(ctx worfklow.Context, input AddNodeInput) {
   resp, err := CreateVM(ctx, input)
   // ... 
   WaitForVMReady(ctx, resp)
@@ -250,7 +251,7 @@ function AddNode(ctx worfklow.Context, input AddNodeInput) {
 
 ```go {3-6}
 // AddNode adds a node to kubernetes cluster.
-function AddNode(ctx worfklow.Context, input AddNodeInput) {
+func AddNode(ctx worfklow.Context, input AddNodeInput) {
   var resp CreateVMOutput
   if err := workflow.ExecuteActivity(ctx, CreateVM, input).Get(ctx, &resp); err != nil {
     return err
@@ -266,7 +267,7 @@ function AddNode(ctx worfklow.Context, input AddNodeInput) {
 
 ```go {3-10}
 // AddNode adds a node to kubernetes cluster.
-function AddNode(ctx worfklow.Context, input AddNodeInput) {
+func AddNode(ctx worfklow.Context, input AddNodeInput) {
   var resp CreateVMOutput
   if err := workflow.ExecuteActivity(ctx, CreateVM, input).Get(ctx, &resp); err != nil {
     return err
@@ -284,7 +285,7 @@ function AddNode(ctx worfklow.Context, input AddNodeInput) {
 
 ```go {8}
 // AddNode adds a node to kubernetes cluster.
-function AddNode(ctx worfklow.Context, input AddNodeInput) {
+func AddNode(ctx worfklow.Context, input AddNodeInput) {
   var resp CreateVMOutput
   if err := workflow.ExecuteActivity(ctx, CreateVM, input).Get(ctx, &resp); err != nil {
     return err
@@ -302,7 +303,7 @@ function AddNode(ctx worfklow.Context, input AddNodeInput) {
 
 ```go 
 // AddNode adds a node to kubernetes cluster.
-function AddNode(ctx worfklow.Context, input AddNodeInput) {
+func AddNode(ctx worfklow.Context, input AddNodeInput) {
   var resp CreateVMOutput
   if err := workflow.ExecuteActivity(ctx, CreateVM, input).Get(ctx, &resp); err != nil {
     return err
