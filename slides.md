@@ -207,6 +207,12 @@ v-motion
 
 </div>
 
+
+<!--
+Workflow can be viewed as event log
+Activities are actually doing all the work
+-->
+
 ---
 ---
 
@@ -613,6 +619,10 @@ Activity has no restrictions on the code it contains, but you still should be mi
 - Changing output type in incompatible ways
 
 </div>
+
+<!--
+THIS is only true if you have active workflows running
+-->
 
 
 ---
