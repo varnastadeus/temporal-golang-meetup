@@ -12,6 +12,9 @@ base: /temporal-golang-meetup/
 
 A Practical Guide to Temporal in Go
 
+<!--
+Ask how many know about temporal
+-->
 
 ---
 layout: quote
@@ -21,10 +24,6 @@ layout: quote
 
 Temporal is a scalable and reliable runtime for durable function executions called Temporal Workflow Executions.
 Said another way, it's a platform that guarantees the Durable Execution of your application code.
-
-<!--
-Ask how many know about temporal
--->
 
 ---
 ---
@@ -54,9 +53,14 @@ func AddNode(ctx context.Context, input AddNodeInput) {
 - Retryable
 - Terminal
 - Handle rollback
-- <span v-mark.underline.red>Durable...</span>
+- Durable...
 
 </v-clicks>
+
+<!--
+Action to AddNode with multiple steps
+It should have some guarantees
+-->
 
 ---
 ---
@@ -371,8 +375,9 @@ client.ExecuteWorkflow(ctx, options, AddNode, input)
 ---
 ---
 
-# Demo?
+# Demo
 
+[Temporal UI](http://localhost:8080)
 
 ---
 ---
@@ -688,3 +693,5 @@ graph LR
 ---
 ---
 # Questions?
+
+Slides: https://varnastadeus.github.io/temporal-golang-meetup
